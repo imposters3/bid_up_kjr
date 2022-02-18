@@ -1,5 +1,5 @@
 # Bid Up README
-![This is an image](https://files.slack.com/files-pri/T04B40L2C-F034C03RXSL/painting_the_moon_logo___moon_logo_tech.png)
+![This is an image](https://images.ctfassets.net/rsv5jnhanwkh/GFCtn6RZf8HlaEBhxyQgW/172bc2a400fded11c58168b796e33e48/bidding.gif)
 ```
 $ rails new bid_up_kjr -d postgresql -T
 $ cd bid_up_kjr
