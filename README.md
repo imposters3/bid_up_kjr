@@ -1,5 +1,6 @@
 # Bid Up README
 ![This is an image](https://images.ctfassets.net/rsv5jnhanwkh/GFCtn6RZf8HlaEBhxyQgW/172bc2a400fded11c58168b796e33e48/bidding.gif)
+![This is an image](https://apkmody.io/wp-content/uploads/2021/08/Imposter-Smashers-MOD-APK-cover.jpg)
 ```
 $ rails new bid_up_kjr -d postgresql -T
 $ cd bid_up_kjr
