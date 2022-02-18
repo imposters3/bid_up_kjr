@@ -1,4 +1,4 @@
-# README
+# Bid Up README
 ```
 $ rails new bid_up_kjr -d postgresql -T
 $ cd bid_up_kjr
@@ -20,14 +20,14 @@ $ rails db:migrate
 $ rails s
 ```
 
-###Adding mailer settings
-####You’ll need to set up the default URL options for the Devise mailer in each environment. In the config/environments/development.rb file, add the following code at the end of the previous code inside the file:
+### Adding mailer settings
+#### You’ll need to set up the default URL options for the Devise mailer in each environment. In the config/environments/development.rb file, add the following code at the end of the previous code inside the file:
 
 ```Ruby
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 ```
-####app/views/home/index.html.erb
+#### app/views/home/index.html.erb
 ```Ruby
 <%= react_component 'App', {
   logged_in: user_signed_in?,
@@ -38,23 +38,25 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 } %>
 ```
 ```
-config/routes.rb
+# in the config/routes.rb
 
 Rails.application.routes.draw do
   get '*path', to: 'home#index', constraints: ->(request){ request.format.html? }
   root 'home#index'
 end
+```
 
 ```
 $ bundle add bootstrap
 $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
 $ yarn add reactstrap
-Add an import to the scss file. Make sure to stop your server and restart after the performing these commands.
+# Add an import to the scss file. Make sure to stop your server and restart after the performing these commands.
 
 app/assets/stylesheets/application.scss
 
 @import 'bootstrap';
 ```
-
+> add react-router-dom@5.3.0
+```
 $ yarn add react-router-dom@5.3.0
 ```
