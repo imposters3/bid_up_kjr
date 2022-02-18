@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-// import bidLogo from '../assets/bid-logo.png';
 
-
-class Footer extends Component {
+class AboutUs extends Component {
   render() {
-
     return(
         <>
-          <h3> Footer </h3>
+          <h2> About us Page </h2>
         </>
     )
   }
 }
-export default Footer
+export default AboutUs
