@@ -6,12 +6,6 @@ import CreateAuctions from '../pages/CreateAuctions';
 import MyAuctions from '../pages/MyAuctions';
 import MyBids from '../pages/MyBids';
 import { Nav, NavItem } from 'reactstrap';
-import {
-  BrowserRouter as  Router,
-  Link,
-  Route,
-  Switch
-} from 'react-router-dom'
 
 class Header extends Component {
   render() {
@@ -29,15 +23,15 @@ class Header extends Component {
     return (
       <>
         <header>
-          <Router>
+        
             <div className="nav-bar">
               <NavLink to="/">
                 <img src={bidLogo} alt="Bid up logo" className="logo"/>
               </NavLink>
             </div>
-          </Router>
           
-          <Router>
+          
+        
             <div className="nav-bar">
               {logged_in &&
                 <NavLink to= "/create_auction_route" className="nav-link">Create Auction</NavLink>
@@ -49,16 +43,16 @@ class Header extends Component {
                 <NavLink to= "/my_bids_route" className="nav-link">My Bids</NavLink>
               }
             </div>
-           </Router>
+      
 
            <div className="nav-bar">
-              <Router>
+            
                 <Nav>
                   <NavItem>
                     <NavLink to="/about" className="nav-link">About Us</NavLink>
                   </NavItem>
                 </Nav>
-              </Router>
+              
 
               {!logged_in &&
                 <a href={new_user_route} className="nav-link">Sign Up</a>

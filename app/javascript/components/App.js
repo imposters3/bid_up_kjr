@@ -7,11 +7,9 @@ import MyBids from './pages/MyBids'
 import CreateAuctions from './pages/CreateAuctions'
 import {
   BrowserRouter as  Router,
-  NavLink,
   Route,
   Switch
 } from 'react-router-dom'
-import { Nav, NavItem } from 'reactstrap'
 
 class App extends Component {
   render() {
@@ -28,16 +26,17 @@ class App extends Component {
 
     return(
       <>
-          <Header {...this.props}/>
-          <Router>
-            <Switch className="nav-bar">
-              <Route exact path="/" component={Home} />
-              <Route path="/create_auction_route" component={create_auction_route} />
-              <Route path="/my_auctions_route" component={my_auctions_route} />
-              <Route path="/my_bids_route" component={my_bids_route} />
-              <Route path="/about" component={AboutUs} />
-            </Switch>
-          </Router>
+       
+        <Router>
+         <Header {...this.props}/>
+          <Switch className="nav-bar">
+            <Route exact path="/" component={Home} />
+            <Route path="/create_auction_route" component={CreateAuctions} />
+            <Route path="/my_auctions_route" component={MyAuctions} />
+            <Route path="/my_bids_route" component={MyBids} />
+            <Route path="/about" component={AboutUs} />
+          </Switch>
+        </Router>
       </>
     )
   }
