@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
-// import Header from './components/Header'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import {
+  BrowserRouter as  Router,
+  NavLink,
+  Route,
+  Switch
+} from 'react-router-dom'
+import { Nav, NavItem } from 'reactstrap'
 
 class App extends Component {
   render() {
@@ -10,19 +19,13 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
+    console.log("sign_in_route:",sign_in_route);
+    console.log("sign_out_route:",sign_out_route);
     return(
       <>
-        <h1>Hello World</h1>
-        {logged_in &&
-          <div>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        }
-        {!logged_in &&
-          <div>
-            <a href={sign_in_route}>Sign In</a>
-          </div>
-        }
+          <Header {...this.props}/>
+          <Home/>
+          <Footer/>
       </>
     )
   }
