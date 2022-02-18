@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
-// import Header from './components/Header'
+import Header from './components/Header'
+import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
+import MyAuctions from './pages/MyAuctions'
+import MyBids from './pages/MyBids'
+import CreateAuctions from './pages/CreateAuctions'
+import {
+  BrowserRouter as  Router,
+  Route,
+  Switch
+} from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -8,24 +18,27 @@ class App extends Component {
       current_user,
       new_user_route,
       sign_in_route,
-      sign_out_route
+      sign_out_route,
+      create_auction_route,
+      my_auctions_route,
+      my_bids_route
     } = this.props
+
     return(
       <>
-        <h1>Hello World</h1>
-        {logged_in &&
-          <div>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        }
-        {!logged_in &&
-          <div>
-            <a href={sign_in_route}>Sign In</a>
-          </div>
-        }
+       
+        <Router>
+         <Header {...this.props}/>
+          <Switch className="nav-bar">
+            <Route exact path="/" component={Home} />
+            <Route path="/create_auction_route" component={CreateAuctions} />
+            <Route path="/my_auctions_route" component={MyAuctions} />
+            <Route path="/my_bids_route" component={MyBids} />
+            <Route path="/about" component={AboutUs} />
+          </Switch>
+        </Router>
       </>
     )
   }
 }
-
 export default App

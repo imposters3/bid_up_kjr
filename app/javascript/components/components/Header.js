@@ -1,30 +1,72 @@
-// import React, { Component } from 'react';
-// import { NavLink } from 'react-router-dom';
-// import catLogo from '../assets/catLogo.jpg';
-// import '../App.css'
-//
-// class Header extends Component {
-//   render() {
-//     return(
-//         <>
-//           <header>
-//             <section className='header'>
-//                 <NavLink to = "/" >
-//                 <img src = {catLogo} alt = "logo for Header" className="catlogo" ></img>
-//                 </NavLink>
-//                  <div className='nav-links'>
-//                    <ul>
-//                      <NavLink to = "/catindex" className='navbaritem'>Meet the cat</NavLink>
-//                    </ul>
-//                    <ul>
-//                      <NavLink to = "/catnew" className='navbaritem'>Add a cat</NavLink>
-//                    </ul>
-//                 </div>
-//             </section>
-//           </header>
-//         </>
-//     )
-//   }
-// }
-//
-// export default Header
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import bidLogo from 'images/bid-up-moon.png';
+import AboutUs from '../pages/AboutUs';
+import CreateAuctions from '../pages/CreateAuctions';
+import MyAuctions from '../pages/MyAuctions';
+import MyBids from '../pages/MyBids';
+import { Nav, NavItem } from 'reactstrap';
+
+class Header extends Component {
+  render() {
+    const {
+      logged_in,
+      current_user,
+      new_user_route,
+      sign_in_route,
+      sign_out_route,
+      create_auction_route,
+      my_auctions_route,
+      my_bids_route
+    } = this.props
+
+    return (
+      <>
+        <header>
+        
+            <div className="nav-bar">
+              <NavLink to="/">
+                <img src={bidLogo} alt="Bid up logo" className="logo"/>
+              </NavLink>
+            </div>
+          
+          
+        
+            <div className="nav-bar">
+              {logged_in &&
+                <NavLink to= "/create_auction_route" className="nav-link">Create Auction</NavLink>
+              }
+              {logged_in &&
+                <NavLink to= "/my_auctions_route" className="nav-link">My Auctions</NavLink>
+              }
+              {logged_in &&
+                <NavLink to= "/my_bids_route" className="nav-link">My Bids</NavLink>
+              }
+            </div>
+      
+
+           <div className="nav-bar">
+            
+                <Nav>
+                  <NavItem>
+                    <NavLink to="/about" className="nav-link">About Us</NavLink>
+                  </NavItem>
+                </Nav>
+              
+
+              {!logged_in &&
+                <a href={new_user_route} className="nav-link">Sign Up</a>
+              }
+              {logged_in &&
+                <a href={sign_out_route} className="nav-link">Sign Out</a>
+              }
+              {!logged_in &&
+                <a href={sign_in_route} className="nav-link">Sign In</a>
+              }
+            </div>
+        </header>
+      </>
+    )
+  }
+}
+export default Header
