@@ -25,11 +25,6 @@ class App extends Component {
       my_auctions_route,
       my_bids_route
     } = this.props
-    console.log("logged_in:",logged_in);
-    console.log("current_user:",current_user);
-    console.log("new_user_route:",new_user_route);
-    console.log("sign_out_route:",sign_out_route);
-    console.log("sign_in_route:",sign_in_route);
 
     return(
       <>
