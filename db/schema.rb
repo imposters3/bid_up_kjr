@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_213644) do
+ActiveRecord::Schema.define(version: 2022_02_18_224604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "auction_items", force: :cascade do |t|
+    t.string "title"
+    t.text "celebrity_image_url"
+    t.text "description"
+    t.integer "highest_bid_price"
+    t.integer "highest_bid_user_id"
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.string "charity_name"
+    t.text "charity_url"
+    t.boolean "has_a_winner"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "price"
+    t.integer "user_id"
+    t.integer "auction_item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_213644) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
