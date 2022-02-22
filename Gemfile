@@ -54,3 +54,5 @@ gem "devise", "~> 4.8"
 gem "react-rails", "~> 2.6"
 
 gem "bootstrap", "~> 5.1"
+
+gem 'pry', '~> 0.13.1'
