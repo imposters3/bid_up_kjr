@@ -6,19 +6,31 @@ import MyAuctions from "./pages/MyAuctions";
 import MyBids from "./pages/MyBids";
 import AuctionNew from "./pages/AuctionNew";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import auctions from "./mockData";
 import AuctionShow from "./pages/AuctionShow";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      auctions: auctions,
+      auctions: [],
     };
   }
+
+  componentDidMount() {
+    this.readAuction();
+  }
+
+  readAuction = () => {
+    fetch("http://localhost:3000/auction_items")
+      .then((response) => response.json())
+      .then((auction_items) => this.setState({ auctions: auction_items }))
+      .catch((errors) => console.log("Auction read errors:", errors));
+  };
+
   createAuction = (auction) => {
     fetch("/auction_items", { method: "POST", body: auction });
   };
+
   render() {
     const {
       logged_in,
@@ -61,7 +73,7 @@ class App extends Component {
             <Route
               path="/auction_new_route"
               render={(props) => (
-                <AuctionNew createAuction={this.createAuction.bind(this)} />
+                <AuctionNew createAuction={this.createAuction} />
               )}
             />
 

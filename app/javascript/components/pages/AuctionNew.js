@@ -18,6 +18,7 @@ class AuctionNew extends Component {
         charity_name: "",
         charity_url: "",
         has_a_winner: false,
+        user_id: "",
       },
       submitted: false,
     };
@@ -35,7 +36,6 @@ class AuctionNew extends Component {
   };
 
   render() {
-    console.log("this.state for new Auction", this.props);
     return (
       <>
         <h2> AuctionNewPage </h2>
