@@ -44,3 +44,10 @@ header {
   height: 160px;
   cursor: pointer;
 }
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}

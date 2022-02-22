@@ -9,9 +9,10 @@ let auctions = [
     end_date_time: 2022,
     charity_name: 'Donate.org',
     charity_url: 'https://www.linkedin.com/in/charity-johnson-9555929',
-    has_a_winner: false
+    has_a_winner: false,
+    user_id: 1
   },
-  { 
+  {
     id: 2,
     title: 'Work out with Rock',
     celebrity_image_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/therock-253954517-279993034023432-628278073878740852-n-1636731864.jpg?resize=640:*',
@@ -22,7 +23,8 @@ let auctions = [
     end_date_time: 2022,
     charity_name: 'Donate.org',
     charity_url: 'https://www.linkedin.com/in/charity-johnson-9555929',
-    has_a_winner: false
+    has_a_winner: false,
+    user_id: 2
   }
 ]
 

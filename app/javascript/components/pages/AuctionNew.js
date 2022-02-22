@@ -18,7 +18,8 @@ class AuctionNew extends Component {
         end_date_time: "",
         charity_name: "",
         charity_url: "",
-        has_a_winner: ""
+        has_a_winner: false,
+        user_id: ""
       },
       submitted: false
     }
@@ -29,16 +30,17 @@ class AuctionNew extends Component {
     newAuction[e.target.name] = e.target.value
     this.setState({newAuction: newAuction})
   }
+
   handleSubmit = () => {
     this.props.createAuction(this.state.newAuction)
     this.setState({submitted: true})
   }
 
   render() {
-    console.log("this.state for new Auction", this.state);
+    console.log("this.state for new Auction", this.props);
     return(
         <>
-          <h2> AuctionNewPage </h2> 
+          <h2> AuctionNewPage </h2>
           <Form>
             <FormGroup>
               <Label for="title">
@@ -85,17 +87,6 @@ class AuctionNew extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="highest_bid_user_id">
-                highest_bid_user_id
-              </Label>
-              <Input
-                name="highest_bid_user_id"
-                type="text"
-                onChange={this.handleChange}
-                value={this.state.newAuction.highest_bid_user_id}
-              />
-            </FormGroup>
-            <FormGroup>
               <Label for="start_date_time">
                 start_date_time
               </Label>
@@ -139,20 +130,10 @@ class AuctionNew extends Component {
                 value={this.state.newAuction.charity_url}
               />
             </FormGroup>
-            <FormGroup>
-              <Label for="has_a_winner">
-                has_a_winner?
-              </Label>
-              <Input
-                name="has_a_winner"
-                type="text"
-                onChange={this.handleChange}
-                value={this.state.newAuction.has_a_winner}
-              />
-            </FormGroup>
-            
+
+
           </Form>
-          <button onClick={this.handleSubmit} name="submit">
+          <button onClick={this.handleSubmit.bind(this)} name="submit">
               Create a New Auction
           </button>
           {this.state.submitted && <Redirect to="/my_auctions_route"/>}

@@ -37,19 +37,17 @@ class App extends Component {
         <Router>
          <Header {...this.props}/>
           <Switch className="nav-bar">
-            <Route exact path="/" component={Home} />
-            <Route path="/auction_new_route" component={AuctionNew} />   
-
+            <Route exact path="/" render={(props) => <Home auctions={this.state.auctions} />} />
             <Route path="/my_auctions_route" render={(props) => <MyAuctions auctions={this.state.auctions} />} />
-            
+
             <Route path="/auction_show_route/:id" render={(props) => {
               let paramId = +props.match.params.id
               let auction = this.state.auctions.find(auction => auction.id === paramId )
               return <AuctionShow auction={auction}/>}} />
 
-            
-            <Route path="/auction_new_route" render={(props) => <AuctionNew createAuction={this.createAuction} />} />
-            
+
+            <Route path="/auction_new_route" render={(props) => <AuctionNew createAuction={this.createAuction.bind(this)} />} />
+
             <Route path="/my_bids_route" component={MyBids} />
             <Route path="/about" component={AboutUs} />
           </Switch>
