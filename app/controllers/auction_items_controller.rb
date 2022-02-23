@@ -6,7 +6,6 @@ class AuctionItemsController < ApplicationController
  end
 
   def create
-    binding.pry
     auction_item = AuctionItem.create(auction_item_params.merge(user_id:current_user.id))
     if auction_item.valid?
       render json: auction_item

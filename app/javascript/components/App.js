@@ -29,23 +29,23 @@ class App extends Component {
   };
 
   createAuction = (auction) => {
-    fetch("/auction_items", { method: "POST",headers:{'Content-Type': 'application/json'}, body: JSON.stringify({auction_item:auction}) });
+    fetch("/auction_items", { method: "POST", headers:{ 'Content-Type': 'application/json' }, body: JSON.stringify({auction_item:auction}) });
   };
 
   updateAuction = (updateAuction, id) => {
-		fetch('http://localhost:3000/auction_items/${id}', {
-			body: JSON.stringify(updateAuction),
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			method: 'PATCH'
-		}).then((response) =>
-			response
-				.json()
-				.then((payload) => this.readAuction())
-				.catch((errors) => console.log('Auction create errors:', errors))
-		);
-	};
+    fetch(`/auction_items/${id}`, {
+      body: JSON.stringify(updateAuction),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'PATCH'
+    }).then((response) =>
+      response
+        .json()
+        .then((payload) => this.readAuction())
+        .catch((errors) => console.log('Auction create errors:', errors))
+    );
+  };
 
   render() {
     const {
@@ -74,7 +74,6 @@ class App extends Component {
               path="/my_auctions_route"
               render={(props) => <MyAuctions auctions={this.state.auctions} />}
             />
-
             <Route
               path="/auction_show_route/:id"
               render={(props) => {
@@ -85,14 +84,12 @@ class App extends Component {
                 return <AuctionShow auction={auction} />;
               }}
             />
-
             <Route
               path="/auction_new_route"
               render={(props) => (
                 <AuctionNew createAuction={this.createAuction} />
               )}
             />
-
             <Route
               path="/auctionedit/:id"
               render={(props) => {
