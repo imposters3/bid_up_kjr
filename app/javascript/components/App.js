@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import MyAuctions from "./pages/MyAuctions";
 import MyBids from "./pages/MyBids";
 import AuctionNew from "./pages/AuctionNew";
+import AuctionEdit from './pages/AuctionEdit';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuctionShow from "./pages/AuctionShow";
 
@@ -28,7 +29,28 @@ class App extends Component {
   };
 
   createAuction = (auction) => {
-    fetch("/auction_items", { method: "POST", body: auction });
+    fetch("/auction_items", { 
+      method: "POST", 
+      headers: { 
+        'Content-Type': 'application/json' 
+      }, 
+      body: JSON.stringify({auction_item:auction}) 
+    });
+  };
+
+  updateAuction = (updateAuction, id) => {
+    fetch(`/auction_items/${id}`, {
+      body: JSON.stringify(updateAuction),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'PATCH'
+    }).then((response) =>
+      response
+        .json()
+        .then((payload) => this.readAuction())
+        .catch((errors) => console.log('Auction create errors:', errors))
+    );
   };
 
   render() {
@@ -58,7 +80,6 @@ class App extends Component {
               path="/my_auctions_route"
               render={(props) => <MyAuctions auctions={this.state.auctions} />}
             />
-
             <Route
               path="/auction_show_route/:id"
               render={(props) => {
@@ -69,14 +90,20 @@ class App extends Component {
                 return <AuctionShow auction={auction} />;
               }}
             />
-
             <Route
               path="/auction_new_route"
               render={(props) => (
                 <AuctionNew createAuction={this.createAuction} />
               )}
             />
-
+            <Route
+              path="/auctionedit/:id"
+              render={(props) => {
+                let id = +props.match.params.id;
+                let auction = this.state.auctions.find((auction) => auction.id === id);
+                return <AuctionEdit auction={auction} updateAuction={this.updateAuction} id={id} />;
+              }}
+					  />
             <Route path="/my_bids_route" component={MyBids} />
             <Route path="/about" component={AboutUs} />
           </Switch>
