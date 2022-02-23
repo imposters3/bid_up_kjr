@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import MyAuctions from "./pages/MyAuctions";
 import MyBids from "./pages/MyBids";
 import AuctionNew from "./pages/AuctionNew";
+import AuctionEdit from './pages/AuctionEdit';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuctionShow from "./pages/AuctionShow";
 
@@ -30,6 +31,21 @@ class App extends Component {
   createAuction = (auction) => {
     fetch("/auction_items", { method: "POST", body: auction });
   };
+
+  updateAuction = (updateAuction, id) => {
+		fetch('http://localhost:3000/auction_items/${id}', {
+			body: JSON.stringify(updateAuction),
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			method: 'PATCH'
+		}).then((response) =>
+			response
+				.json()
+				.then((payload) => this.readAuction())
+				.catch((errors) => console.log('Auction create errors:', errors))
+		);
+	};
 
   render() {
     const {
@@ -77,6 +93,14 @@ class App extends Component {
               )}
             />
 
+            <Route
+              path="/auctionedit/:id"
+              render={(props) => {
+                let id = +props.match.params.id;
+                let auction = this.state.auctions.find((auction) => auction.id === id);
+                return <AuctionEdit auction={auction} updateAuction={this.updateAuction} id={id} />;
+              }}
+					  />
             <Route path="/my_bids_route" component={MyBids} />
             <Route path="/about" component={AboutUs} />
           </Switch>
