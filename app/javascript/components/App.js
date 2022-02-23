@@ -29,7 +29,13 @@ class App extends Component {
   };
 
   createAuction = (auction) => {
-    fetch("/auction_items", { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({auction_item:auction}) });
+    fetch("/auction_items", { 
+      method: "POST", 
+      headers: { 
+        'Content-Type': 'application/json' 
+      }, 
+      body: JSON.stringify({auction_item:auction}) 
+    });
   };
 
   updateAuction = (updateAuction, id) => {
