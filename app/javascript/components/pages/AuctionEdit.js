@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 class AuctionEdit extends Component {
   constructor(props) {
     super(props);
+    console.log(props.auction);
     this.state = {
       updateAuction: {
         title: "",
@@ -18,6 +19,7 @@ class AuctionEdit extends Component {
         charity_url: "",
         has_a_winner: false,
         user_id: "",
+        ...props.auction
       },
       submitted: false,
     };
