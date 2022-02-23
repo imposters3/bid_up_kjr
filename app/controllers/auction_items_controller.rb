@@ -3,7 +3,7 @@ class AuctionItemsController < ApplicationController
   def index
    auction_items = AuctionItem.all
    render json: auction_items
- end
+  end
 
   def create
     auction_item = AuctionItem.create(auction_item_params.merge(user_id:current_user.id))
