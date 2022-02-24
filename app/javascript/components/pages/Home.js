@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <h2> Home Page/All Auctions </h2>
+        <h2> Home Page </h2>
         <div className="flex-grid">
           {this.props.auctions.map((auction) => {
             return (
