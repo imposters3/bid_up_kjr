@@ -40,11 +40,11 @@ class App extends Component {
 
   updateAuction = (updateAuction, id) => {
     fetch(`/auction_items/${id}`, {
+      method: 'PATCH',
       body: JSON.stringify({ auction_item: updateAuction }),
       headers: {
         "Content-Type": "application/json",
       },
-      method: "PATCH",
     }).then((response) =>
       response
         .json()
