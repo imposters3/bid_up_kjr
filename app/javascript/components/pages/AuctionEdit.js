@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { Redirect } from "react-router-dom";
+import React, { Component } from "react"
+import { Form, FormGroup, Label, Input, Button } from "reactstrap"
+import { Redirect } from "react-router-dom"
 
 class AuctionEdit extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    const { user_id, ...auction } = props.auction
     this.state = {
       updateAuction: {
         title: "",
@@ -17,37 +18,33 @@ class AuctionEdit extends Component {
         charity_name: "",
         charity_url: "",
         has_a_winner: false,
-        user_id: "",
-        ...props.auction
+        ...auction,
       },
       submitted: false,
-    };
+    }
   }
 
   handleChange = (e) => {
-    let { updateAuction } = this.state;
-    updateAuction[e.target.name] = e.target.value;
-    this.setState({ updateAuction: updateAuction });
-  };
+    let { updateAuction } = this.state
+    updateAuction[e.target.name] = e.target.value
+    this.setState({ updateAuction: updateAuction })
+  }
 
   handleSubmit = () => {
-    this.props.updateAuction(this.state.form, this.props.id);
-    this.setState({ submitted: true });
-  };
+    this.props.updateAuction(this.state.updateAuction, this.props.id)
+    console.log("Handle Auction Sub.JS:", this.state.updateAuction)
+    this.setState({ submitted: true })
+  }
 
   render() {
+    console.log("auction Edit Render:", this.state)
     return (
       <>
         <h2> Auction Edit Page </h2>
         <Form>
           <FormGroup>
             <Label for="title">title</Label>
-            <Input
-              name="title"
-              type="text"
-              onChange={this.handleChange}
-              value={this.state.updateAuction.title}
-            />
+            <Input name="title" type="text" onChange={this.handleChange} value={this.state.updateAuction.title} />
           </FormGroup>
           <FormGroup>
             <Label for="celebrity_image_url">celebrity_image_url</Label>
@@ -118,7 +115,7 @@ class AuctionEdit extends Component {
         </Button>
         {this.state.submitted && <Redirect to="/my_auctions_route" />}
       </>
-    );
+    )
   }
 }
-export default AuctionEdit;
+export default AuctionEdit
