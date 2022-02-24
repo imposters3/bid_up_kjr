@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 import { Redirect } from "react-router-dom"
+import moment from "moment"
 
 class AuctionEdit extends Component {
   constructor(props) {
@@ -32,12 +33,10 @@ class AuctionEdit extends Component {
 
   handleSubmit = () => {
     this.props.updateAuction(this.state.updateAuction, this.props.id)
-    console.log("Handle Auction Sub.JS:", this.state.updateAuction)
     this.setState({ submitted: true })
   }
 
   render() {
-    console.log("auction Edit Render:", this.state)
     return (
       <>
         <h2> Auction Edit Page </h2>
@@ -79,7 +78,8 @@ class AuctionEdit extends Component {
               name="start_date_time"
               type="datetime-local"
               onChange={this.handleChange}
-              value={this.state.updateAuction.start_date_time}
+              value={moment(this.state.updateAuction.start_date_time).format("YYYY-MM-DDTHH:mm:ss")}
+              
             />
           </FormGroup>
           <FormGroup>
@@ -88,7 +88,7 @@ class AuctionEdit extends Component {
               name="end_date_time"
               type="datetime-local"
               onChange={this.handleChange}
-              value={this.state.updateAuction.end_date_time}
+              value={moment(this.state.updateAuction.end_date_time).format("YYYY-MM-DDTHH:mm:ss")}
             />
           </FormGroup>
           <FormGroup>
