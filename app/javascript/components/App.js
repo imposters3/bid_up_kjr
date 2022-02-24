@@ -109,7 +109,12 @@ class App extends Component {
             />
             <Route
               path="/bid_new_route"
-              render={(props) => <BidNew createBid={this.createBid} />}
+              render={(props) => (
+                <BidNew
+                  createBid={this.createBid}
+                  updateAuction={this.updateAuction}
+                />
+              )}
             />
             <Route
               path="/auctionedit/:id"
