@@ -25,8 +25,8 @@ class AuctionShow extends Component {
             <p>{auction.highest_bid_price}</p>
           </FormGroup>
           <FormGroup>
-            <Label for="highest_bid_user_id">Highest Bid User ID</Label>
-            <p>{auction.highest_bid_user_id}</p>
+            <Label for="highest_bidder">Highest Bidder</Label>
+            {/* <p>{highest_bid_username}</p> */}
           </FormGroup>
           <FormGroup>
             <Label for="start_date_time">Start Date & Time</Label>
@@ -44,7 +44,7 @@ class AuctionShow extends Component {
             <Label for="charity_url">Charity Link</Label>
             <p>{auction.charity_url}</p>
           </FormGroup>
-          <BidNew />
+          <BidNew createBid = {this.props.createBid}/>
           <NavLink to={`/auctionedit/${auction.id}`}>
             <Button>Edit Auction</Button>
           </NavLink>

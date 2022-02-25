@@ -1,7 +1,7 @@
 class BidsController < ApplicationController
 
   def create
-    bid = Bid.create(bid_params.merge(user_id:current_user.id).merge(auction_item_id:current_auction_item.id))
+    bid = Bid.create(bid_params.merge(user_id:current_user.id))
     if bid.valid?
       render json: bid
     else
@@ -11,6 +11,6 @@ class BidsController < ApplicationController
 
 private
   def bid_params
-  params.require(:bid).permit(:price)
+  params.require(:bid).permit(:price, :auction_item_id)
   end
 end

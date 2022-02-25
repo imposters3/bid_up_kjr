@@ -54,19 +54,17 @@ class App extends Component {
     );
   };
 
-  createBid = (bid) => {
-    // fetch("/bids", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ bid: bid }),
-    // });
-    console.log("create Bid");
+  createBid = (auction_item_id) => (bid) => {
+
+    fetch("/bids", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ bid: {...bid, auction_item_id:auction_item_id} }),
+    });
   };
-  test = ()=>{
-    console.log("test");
-  }
+  
   render() {
     const {
       logged_in,
@@ -98,11 +96,11 @@ class App extends Component {
             <Route
               path="/auction_show_route/:id"
               render={(props) => {
-                let paramId = +props.match.params.id;
+                let paramId = props.match.params.id;
                 let auction = this.state.auctions.find(
-                  (auction) => auction.id === paramId
+                  (auction) => auction.id == paramId
                 );
-                return <AuctionShow auction={auction} />;
+                return <AuctionShow auction={auction}  createBid={this.createBid(paramId)} />;
               }}
             />
             <Route
@@ -111,16 +109,7 @@ class App extends Component {
                 <AuctionNew createAuction={this.createAuction} />
               )}
             />
-            <Route
-              path="/bid_new_route"
-              render={(props) => (
-                <BidNew
-                  createBid={this.createBid}
-                  updateAuction={this.updateAuction}
-                  test={this.test}
-                />
-              )}
-            />
+           
             <Route
               path="/auctionedit/:id"
               render={(props) => {
