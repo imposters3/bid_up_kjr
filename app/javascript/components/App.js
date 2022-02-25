@@ -8,6 +8,7 @@ import AuctionNew from "./pages/AuctionNew";
 import AuctionEdit from "./pages/AuctionEdit";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuctionShow from "./pages/AuctionShow";
+import BidNew from "./components/BidNew";
 
 class App extends Component {
   constructor(props) {
@@ -54,15 +55,18 @@ class App extends Component {
   };
 
   createBid = (bid) => {
-    fetch("/bids", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ bid: bid }),
-    });
+    // fetch("/bids", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ bid: bid }),
+    // });
+    console.log("create Bid");
   };
-
+  test = ()=>{
+    console.log("test");
+  }
   render() {
     const {
       logged_in,
@@ -113,6 +117,7 @@ class App extends Component {
                 <BidNew
                   createBid={this.createBid}
                   updateAuction={this.updateAuction}
+                  test={this.test}
                 />
               )}
             />

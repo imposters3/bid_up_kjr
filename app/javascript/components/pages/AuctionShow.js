@@ -10,7 +10,7 @@ class AuctionShow extends Component {
       <>
         <h2> AuctionShow Page </h2>
         <Form>
-          // <h1>{auction.title}</h1>
+           <h1>{auction.title}</h1>
           <img
             src={auction.celebrity_image_url}
             alt="celebrity image"

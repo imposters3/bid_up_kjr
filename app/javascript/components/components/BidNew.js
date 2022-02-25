@@ -6,7 +6,6 @@ import { Redirect } from "react-router-dom";
 class BidNew extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       newBid: {
         price: "",
@@ -33,10 +32,9 @@ class BidNew extends Component {
   };
 
   handleSubmit = () => {
-    this.props.createBid(this.state.newBid);
-    this.state.currentAuction.highest_bid_price = this.state.newBid.price;
-    this.props.updateAuction(this.state.currentAuction);
-    this.setState({ submitted: true }, { currentAuction: currentAuction });
+    // this.props.createBid(this.state.newBid);
+    // this.setState({ submitted: true });
+    this.props.test()
   };
 
   render() {
