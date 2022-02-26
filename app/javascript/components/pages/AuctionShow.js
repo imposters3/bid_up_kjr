@@ -2,10 +2,33 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import BidNew from "../components/BidNew";
+import { Redirect } from "react-router-dom"
 
 class AuctionShow extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      submitted: false,
+    }
+  }
+
+  deleteAuction = (id) => {
+    fetch(`/auction_items/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(payload => this.props.readAuction())
+    .catch(errors => console.log("delete Auction errors:", errors))
+    this.setState({ submitted: true })
+  }
+
+
   render() {
     const { auction } = this.props;
+    
     return (
       <>
         <h2> AuctionShow Page </h2>
@@ -24,10 +47,10 @@ class AuctionShow extends Component {
             <Label for="highest_bid_price">Highest Bid Price</Label>
             <p>{auction.highest_bid_price}</p>
           </FormGroup>
-          <FormGroup>
+          {/* <FormGroup>
             <Label for="highest_bidder">Highest Bidder</Label>
-            {/* <p>{highest_bid_username}</p> */}
-          </FormGroup>
+            <p>{highest_bid_username}</p>
+          </FormGroup> */}
           <FormGroup>
             <Label for="start_date_time">Start Date & Time</Label>
             <p>{auction.start_date_time}</p>
@@ -44,13 +67,12 @@ class AuctionShow extends Component {
             <Label for="charity_url">Charity Link</Label>
             <p>{auction.charity_url}</p>
           </FormGroup>
-          <BidNew createBid = {this.props.createBid}/>
+          <BidNew createBid={this.props.createBid}/>
           <NavLink to={`/auctionedit/${auction.id}`}>
             <Button>Edit Auction</Button>
           </NavLink>
-          <NavLink to="/my_auctions_route">
-            <Button>Delete Auction</Button>
-          </NavLink>
+          <Button onClick={()=>this.deleteAuction(auction.id)} name="submit">Delete Auction</Button>
+          {this.state.submitted && <Redirect to="/my_auctions_route" />}
         </Form>
       </>
     );

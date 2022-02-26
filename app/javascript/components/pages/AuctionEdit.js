@@ -111,7 +111,7 @@ class AuctionEdit extends Component {
           </FormGroup>
         </Form>
         <Button onClick={this.handleSubmit} name="submit">
-          Edit Auction
+          Update Auction
         </Button>
         {this.state.submitted && <Redirect to="/my_auctions_route" />}
       </>

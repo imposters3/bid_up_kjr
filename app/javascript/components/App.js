@@ -36,7 +36,10 @@ class App extends Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ auction_item: auction }),
-    });
+    })
+    .then(response => response.json())
+    .then(payload => this.readAuction())
+    .catch(errors => console.log("create Auction errors:", errors))
   };
 
   updateAuction = (updateAuction, id) => {
@@ -65,6 +68,8 @@ class App extends Component {
     });
   };
   
+  
+
   render() {
     const {
       logged_in,
@@ -96,11 +101,15 @@ class App extends Component {
             <Route
               path="/auction_show_route/:id"
               render={(props) => {
-                let paramId = props.match.params.id;
+                let id = props.match.params.id;
                 let auction = this.state.auctions.find(
-                  (auction) => auction.id == paramId
+                  (auction) => auction.id == id
                 );
-                return <AuctionShow auction={auction}  createBid={this.createBid(paramId)} />;
+                return <AuctionShow 
+                auction={auction}  
+                createBid={this.createBid(id)} 
+                readAuction={this.readAuction}
+                />;
               }}
             />
             <Route
