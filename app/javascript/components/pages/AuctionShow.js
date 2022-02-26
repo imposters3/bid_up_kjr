@@ -31,6 +31,7 @@ class AuctionShow extends Component {
     
     return (
       <>
+      <body className="body">
         <Form className="col card">
            <p className="title">{auction.title}</p>
           <img
@@ -75,6 +76,7 @@ class AuctionShow extends Component {
           <Button onClick={()=>this.deleteAuction(auction.id)} name="submit">Delete Auction</Button>
           {this.state.submitted && <Redirect to="/my_auctions_route" />}
         </Form>
+        </body>
       </>
     );
   }

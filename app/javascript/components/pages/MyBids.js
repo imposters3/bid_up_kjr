@@ -6,7 +6,10 @@ class MyBids extends Component {
   render() {
     return(
         <>
-          <h2> MyBids Page </h2>
+          
+          <body className="body">
+            <h2> MyBids Page </h2> 
+          </body>
         </>
     )
   }

@@ -39,14 +39,15 @@ class AuctionEdit extends Component {
   render() {
     return (
       <>
-        <h2> Auction Edit Page </h2>
+       <body className="body">
+        <h2 className="title">  Edit Your Auction Here </h2>
         <Form>
           <FormGroup>
-            <Label for="title">title</Label>
+            <Label for="title" className="subtitle">Title</Label>
             <Input name="title" type="text" onChange={this.handleChange} value={this.state.updateAuction.title} />
           </FormGroup>
           <FormGroup>
-            <Label for="celebrity_image_url">celebrity_image_url</Label>
+            <Label for="celebrity_image_url" className="subtitle">Celebrity Image URL</Label>
             <Input
               name="celebrity_image_url"
               type="text"
@@ -55,7 +56,7 @@ class AuctionEdit extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="description">description</Label>
+            <Label for="description" className="subtitle">Description</Label>
             <Input
               name="description"
               type="text"
@@ -64,7 +65,7 @@ class AuctionEdit extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="highest_bid_price">highest_bid_price</Label>
+            <Label for="highest_bid_price" className="subtitle">Base Bid Price</Label>
             <Input
               name="highest_bid_price"
               type="text"
@@ -73,7 +74,7 @@ class AuctionEdit extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="start_date_time">start_date_time</Label>
+            <Label for="start_date_time" className="subtitle">Start Date & Time</Label>
             <Input
               name="start_date_time"
               type="datetime-local"
@@ -83,7 +84,7 @@ class AuctionEdit extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="end_date_time">end_date_time</Label>
+            <Label for="end_date_time" className="subtitle">End Date & Time</Label>
             <Input
               name="end_date_time"
               type="datetime-local"
@@ -92,7 +93,7 @@ class AuctionEdit extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="charity_name">charity_name</Label>
+            <Label for="charity_name" className="subtitle">Charity Organization Name</Label>
             <Input
               name="charity_name"
               type="text"
@@ -101,7 +102,7 @@ class AuctionEdit extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="charity_url">charity_url</Label>
+            <Label for="charity_url" className="subtitle">Charity Organization Website</Label>
             <Input
               name="charity_url"
               type="text"
@@ -114,6 +115,7 @@ class AuctionEdit extends Component {
           Update Auction
         </Button>
         {this.state.submitted && <Redirect to="/my_auctions_route" />}
+        </body>
       </>
     )
   }

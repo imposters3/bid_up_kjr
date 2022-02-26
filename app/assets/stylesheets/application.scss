@@ -21,7 +21,8 @@ header {
   justify-content: space-between;
   align-items: baseline;
   text-align: center;
-  background-color: #9ee8f9;
+  background-color: #3476c7;
+  
 }
 .nav-bar {
   display: flex;
@@ -29,7 +30,7 @@ header {
 }
 .nav-link {
   color: #000000;
-  font-size: 20px;
+  font-size: 25px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Black Ops One", cursive;
   font-family: "Kanit", sans-serif;
@@ -44,10 +45,14 @@ header {
   height: 160px;
   cursor: pointer;
 }
-
+.body{
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5c02f4bbaf2096da211f2bc8/1608511684852-T2RD6MSWTDW7BGKB7YOI/Darkblue+-+Lightblue+Banner+2.png?format=2500w")
+}
 .flex-grid {
   display: flex;
   justify-content: space-around;
+  
+  
 }
 .col {
   flex: 1;
@@ -60,6 +65,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg")
 }
 /* ---AUCTION SHOW PAGE--- */
 .label {
@@ -81,5 +87,12 @@ header {
 /* ---SIGN UP PAGE--- */
 .form-element{
   margin: 10px;
+  align-items: center;
+}
+
+.textfield{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
