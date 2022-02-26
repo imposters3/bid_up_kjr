@@ -61,7 +61,23 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-
+/* ---AUCTION SHOW PAGE--- */
+.label {
+  color: black;
+  padding: 8px;
+  background-color: #e7e7e7;
+}
+.title{
+  font-family: "Copperplate";
+  font-size: 80px;
+}
+.subtitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Copperplate";
+  font-size: 25px;
+}
 /* ---SIGN UP PAGE--- */
 .form-element{
   margin: 10px;

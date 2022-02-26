@@ -20,6 +20,8 @@ class Home extends Component {
                     width="200px"
                   />
                   <p>{auction.title}</p>
+                  <p>{auction.description}</p>
+                  <p>${auction.highest_bid_price}</p>
                 </NavLink>
               </div>
             );

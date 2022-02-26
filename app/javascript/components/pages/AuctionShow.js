@@ -31,46 +31,47 @@ class AuctionShow extends Component {
     
     return (
       <>
-        <h2> AuctionShow Page </h2>
-        <Form>
-           <h1>{auction.title}</h1>
+        <Form className="col card">
+           <p className="title">{auction.title}</p>
           <img
             src={auction.celebrity_image_url}
             alt="celebrity image"
             width="200px"
           />
           <FormGroup>
-            <Label for="description">Description</Label>
-            <p>{auction.description}</p>
+            <Label for="description" className="subtitle">Description</Label>
+            <p className="label" >{auction.description}</p>
           </FormGroup>
           <FormGroup>
-            <Label for="highest_bid_price">Highest Bid Price</Label>
-            <p>{auction.highest_bid_price}</p>
+            <Label for="highest_bid_price" className="subtitle">Highest Bid Price</Label>
+            <p className="label">${auction.highest_bid_price}</p>
           </FormGroup>
           {/* <FormGroup>
             <Label for="highest_bidder">Highest Bidder</Label>
             <p>{highest_bid_username}</p>
           </FormGroup> */}
           <FormGroup>
-            <Label for="start_date_time">Start Date & Time</Label>
-            <p>{auction.start_date_time}</p>
+            <Label for="start_date_time" className="subtitle">Start Date & Time</Label>
+            <p className="label">{auction.start_date_time}</p>
           </FormGroup>
           <FormGroup>
-            <Label for="end_date_time">End Date & Time</Label>
-            <p>{auction.end_date_time}</p>
+            <Label for="end_date_time" className="subtitle">End Date & Time</Label>
+            <p className="label">{auction.end_date_time}</p>
           </FormGroup>
           <FormGroup>
-            <Label for="charity_name">Charity Org Name</Label>
-            <p>{auction.charity_name}</p>
+            <Label for="charity_name" className="subtitle">Charity Org Name</Label>
+            <p className="label">{auction.charity_name}</p>
           </FormGroup>
           <FormGroup>
-            <Label for="charity_url">Charity Link</Label>
-            <p>{auction.charity_url}</p>
+            <Label for="charity_url" className="subtitle">Charity Link</Label>
+            <p className="label">{auction.charity_url}</p>
           </FormGroup>
           <BidNew createBid={this.props.createBid}/>
+          <br/>
           <NavLink to={`/auctionedit/${auction.id}`}>
             <Button>Edit Auction</Button>
           </NavLink>
+          <br/>
           <Button onClick={()=>this.deleteAuction(auction.id)} name="submit">Delete Auction</Button>
           {this.state.submitted && <Redirect to="/my_auctions_route" />}
         </Form>
