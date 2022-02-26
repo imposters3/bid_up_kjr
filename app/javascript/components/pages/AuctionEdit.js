@@ -44,7 +44,7 @@ class AuctionEdit extends Component {
         <Form>
           <FormGroup>
             <Label for="title" className="subtitle">Title</Label>
-            <Input name="title" type="text" onChange={this.handleChange} value={this.state.updateAuction.title} />
+            <Input name="title" type="text" onChange={this.handleChange} value={this.state.updateAuction.title} className="textfield"/>
           </FormGroup>
           <FormGroup>
             <Label for="celebrity_image_url" className="subtitle">Celebrity Image URL</Label>
@@ -52,7 +52,7 @@ class AuctionEdit extends Component {
               name="celebrity_image_url"
               type="text"
               onChange={this.handleChange}
-              value={this.state.updateAuction.celebrity_image_url}
+              value={this.state.updateAuction.celebrity_image_url} className="textfield"
             />
           </FormGroup>
           <FormGroup>
@@ -61,7 +61,7 @@ class AuctionEdit extends Component {
               name="description"
               type="text"
               onChange={this.handleChange}
-              value={this.state.updateAuction.description}
+              value={this.state.updateAuction.description} className="textfield"
             />
           </FormGroup>
           <FormGroup>
@@ -70,7 +70,7 @@ class AuctionEdit extends Component {
               name="highest_bid_price"
               type="text"
               onChange={this.handleChange}
-              value={this.state.updateAuction.highest_bid_price}
+              value={this.state.updateAuction.highest_bid_price} className="textfield"
             />
           </FormGroup>
           <FormGroup>
@@ -80,7 +80,7 @@ class AuctionEdit extends Component {
               type="datetime-local"
               onChange={this.handleChange}
               value={moment(this.state.updateAuction.start_date_time).format("YYYY-MM-DDTHH:mm:ss")}
-              
+              className="textfield"
             />
           </FormGroup>
           <FormGroup>
@@ -90,6 +90,7 @@ class AuctionEdit extends Component {
               type="datetime-local"
               onChange={this.handleChange}
               value={moment(this.state.updateAuction.end_date_time).format("YYYY-MM-DDTHH:mm:ss")}
+              className="textfield"
             />
           </FormGroup>
           <FormGroup>
@@ -99,6 +100,7 @@ class AuctionEdit extends Component {
               type="text"
               onChange={this.handleChange}
               value={this.state.updateAuction.charity_name}
+              className="textfield"
             />
           </FormGroup>
           <FormGroup>
@@ -108,13 +110,16 @@ class AuctionEdit extends Component {
               type="text"
               onChange={this.handleChange}
               value={this.state.updateAuction.charity_url}
+              className="textfield"
             />
           </FormGroup>
         </Form>
-        <Button onClick={this.handleSubmit} name="submit">
-          Update Auction
-        </Button>
-        {this.state.submitted && <Redirect to="/my_auctions_route" />}
+        <div class="container">
+          <Button onClick={this.handleSubmit} name="submit" className="buttons" >
+            Update Auction
+          </Button>
+          {this.state.submitted && <Redirect to="/my_auctions_route" />}
+        </div>
         </body>
       </>
     )

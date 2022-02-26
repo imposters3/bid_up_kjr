@@ -38,14 +38,15 @@ class AuctionShow extends Component {
             src={auction.celebrity_image_url}
             alt="celebrity image"
             width="200px"
+            className="images"
           />
           <FormGroup>
             <Label for="description" className="subtitle">Description</Label>
-            <p className="label" >{auction.description}</p>
+            <p className="textfield" >{auction.description}</p>
           </FormGroup>
           <FormGroup>
             <Label for="highest_bid_price" className="subtitle">Highest Bid Price</Label>
-            <p className="label">${auction.highest_bid_price}</p>
+            <p className="textfield">${auction.highest_bid_price}</p>
           </FormGroup>
           {/* <FormGroup>
             <Label for="highest_bidder">Highest Bidder</Label>
@@ -53,28 +54,30 @@ class AuctionShow extends Component {
           </FormGroup> */}
           <FormGroup>
             <Label for="start_date_time" className="subtitle">Start Date & Time</Label>
-            <p className="label">{auction.start_date_time}</p>
+            <p className="textfield">{auction.start_date_time}</p>
           </FormGroup>
           <FormGroup>
             <Label for="end_date_time" className="subtitle">End Date & Time</Label>
-            <p className="label">{auction.end_date_time}</p>
+            <p className="textfield">{auction.end_date_time}</p>
           </FormGroup>
           <FormGroup>
             <Label for="charity_name" className="subtitle">Charity Org Name</Label>
-            <p className="label">{auction.charity_name}</p>
+            <p className="textfield">{auction.charity_name}</p>
           </FormGroup>
           <FormGroup>
             <Label for="charity_url" className="subtitle">Charity Link</Label>
-            <p className="label">{auction.charity_url}</p>
+            <p className="textfield">{auction.charity_url}</p>
           </FormGroup>
-          <BidNew createBid={this.props.createBid}/>
+          <BidNew createBid={this.props.createBid} className="placebid"/>
           <br/>
-          <NavLink to={`/auctionedit/${auction.id}`}>
-            <Button>Edit Auction</Button>
-          </NavLink>
-          <br/>
-          <Button onClick={()=>this.deleteAuction(auction.id)} name="submit">Delete Auction</Button>
-          {this.state.submitted && <Redirect to="/my_auctions_route" />}
+          <div class="container">
+            <NavLink to={`/auctionedit/${auction.id}`}>
+              <Button className="buttons">Edit Auction</Button>
+            </NavLink>
+            <br/>
+              <Button onClick={()=>this.deleteAuction(auction.id)} name="submit" className="buttons">Delete Auction</Button>
+            {this.state.submitted && <Redirect to="/my_auctions_route" />}
+          </div>
         </Form>
         </body>
       </>

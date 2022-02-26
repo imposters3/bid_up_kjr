@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Redirect } from "react-router-dom";
 
 class AuctionNew extends Component {
@@ -57,6 +57,7 @@ class AuctionNew extends Component {
               name="celebrity_image_url"
               type="text"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.celebrity_image_url}
             />
           </FormGroup>
@@ -66,6 +67,7 @@ class AuctionNew extends Component {
               name="description"
               type="text"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.description}
             />
           </FormGroup>
@@ -75,6 +77,7 @@ class AuctionNew extends Component {
               name="highest_bid_price"
               type="text"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.highest_bid_price}
             />
           </FormGroup>
@@ -84,6 +87,7 @@ class AuctionNew extends Component {
               name="start_date_time"
               type="datetime-local"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.start_date_time}
             />
           </FormGroup>
@@ -93,6 +97,7 @@ class AuctionNew extends Component {
               name="end_date_time"
               type="datetime-local"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.end_date_time}
             />
           </FormGroup>
@@ -102,6 +107,7 @@ class AuctionNew extends Component {
               name="charity_name"
               type="text"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.charity_name}
             />
           </FormGroup>
@@ -111,13 +117,15 @@ class AuctionNew extends Component {
               name="charity_url"
               type="text"
               onChange={this.handleChange}
+              className= "textfield"
               value={this.state.newAuction.charity_url}
             />
           </FormGroup>
-        </Form>
-        <button onClick={this.handleSubmit.bind(this)} name="submit">
+          <Button onClick={this.handleSubmit.bind(this)} name="submit" className="buttons">
           Create a New Auction
-        </button>
+        </Button>
+        </Form>
+        
         {this.state.submitted && <Redirect to="/my_auctions_route" />}
         </body>
       </>

@@ -18,9 +18,10 @@ class Home extends Component {
                       src={auction.celebrity_image_url}
                       alt="celebrity image"
                       width="200px"
+                      className="images"
                     />
-                    <p>{auction.title}</p>
-                    <p>${auction.highest_bid_price}</p>
+                    <p className="subtitle">{auction.title}</p>
+                    <p className="subtitle">💲{auction.highest_bid_price}💲</p>
                   </NavLink>
                 </div>
               );
