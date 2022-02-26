@@ -8,7 +8,6 @@ import AuctionNew from "./pages/AuctionNew";
 import AuctionEdit from "./pages/AuctionEdit";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuctionShow from "./pages/AuctionShow";
-import BidNew from "./components/BidNew";
 
 class App extends Component {
   constructor(props) {
