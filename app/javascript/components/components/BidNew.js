@@ -32,7 +32,7 @@ class BidNew extends Component {
             <Button onClick={this.handleSubmit.bind(this)} color="danger">
               Place Bid
             </Button>
-            <Input placeholder="must be higher than current price" />
+            <Input type="number" name="price" onChange={this.handleChange} placeholder="must be higher than current price" />
           </InputGroup>
         </div>
       </>

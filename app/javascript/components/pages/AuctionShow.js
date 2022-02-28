@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import BidNew from "../components/BidNew";
 import { Redirect } from "react-router-dom"
+import moment from "moment";
 
 class AuctionShow extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class AuctionShow extends Component {
 
   render() {
     const { auction } = this.props;
-    
+    console.log("pass end date",moment()>moment(auction.end_date_time));
     return (
       <>
       <body className="body">
@@ -45,13 +46,13 @@ class AuctionShow extends Component {
             <p className="textfield" >{auction.description}</p>
           </FormGroup>
           <FormGroup>
-            <Label for="highest_bid_price" className="subtitle">Highest Bid Price</Label>
-            <p className="textfield">${auction.highest_bid_price}</p>
+            <Label for="highest_bid_price" className="subtitle">Current Bid Price</Label>
+            <p className="textfield">${auction.current_bid_price}</p>
           </FormGroup>
-          {/* <FormGroup>
-            <Label for="highest_bidder">Highest Bidder</Label>
-            <p>{highest_bid_username}</p>
-          </FormGroup> */}
+          <FormGroup>
+            <Label for="highest_bidder" className="subtitle">Highest Bidder</Label>
+            <p className="textfield">{auction.highest_bid_username}</p>
+          </FormGroup>
           <FormGroup>
             <Label for="start_date_time" className="subtitle">Start Date & Time</Label>
             <p className="textfield">{auction.start_date_time}</p>

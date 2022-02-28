@@ -56,15 +56,16 @@ class App extends Component {
     );
   };
 
-  createBid = (auction_item_id) => (bid) => {
+  createBid = (auction_item_id) => (price) => {
 
     fetch("/bids", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ bid: {...bid, auction_item_id:auction_item_id} }),
-    });
+      body: JSON.stringify({ bid: {price, auction_item_id:auction_item_id} }),
+    })
+    .then(() => this.readAuction());
   };
   
   
