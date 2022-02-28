@@ -58,7 +58,10 @@ header {
   cursor: pointer;
 }
 .body{
-  background-image: url("https://images.squarespace-cdn.com/content/v1/5c02f4bbaf2096da211f2bc8/1608511684852-T2RD6MSWTDW7BGKB7YOI/Darkblue+-+Lightblue+Banner+2.png?format=2500w")
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5c02f4bbaf2096da211f2bc8/1608511684852-T2RD6MSWTDW7BGKB7YOI/Darkblue+-+Lightblue+Banner+2.png?format=2500w");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .flex-grid {
   display: flex;

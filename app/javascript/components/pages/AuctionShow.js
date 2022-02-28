@@ -70,7 +70,7 @@ class AuctionShow extends Component {
           </FormGroup>
           <BidNew createBid={this.props.createBid} className="placebid"/>
           <br/>
-          <div class="container">
+          <div className="container">
             <NavLink to={`/auctionedit/${auction.id}`}>
               <Button className="buttons">Edit Auction</Button>
             </NavLink>
