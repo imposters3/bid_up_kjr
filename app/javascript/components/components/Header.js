@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import bidLogo from 'images/bid-up-moon.png';
-import AboutUs from '../pages/AboutUs';
-import AuctionNew from '../pages/AuctionNew';
-import MyAuctions from '../pages/MyAuctions';
-import MyBids from '../pages/MyBids';
-import { Nav, NavItem } from 'reactstrap';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import bidLogo from "images/bid-up-moon.png";
+import AboutUs from "../pages/AboutUs";
+import AuctionNew from "../pages/AuctionNew";
+import MyAuctions from "../pages/MyAuctions";
+import MyBids from "../pages/MyBids";
+import { Nav, NavItem } from "reactstrap";
 
 class Header extends Component {
   render() {
@@ -17,47 +17,61 @@ class Header extends Component {
       sign_out_route,
       auction_new_route,
       my_auctions_route,
-      my_bids_route
-    } = this.props
+      my_bids_route,
+    } = this.props;
 
     return (
       <>
         <header>
           <div className="nav-bar">
             <NavLink to="/">
-              <img src={bidLogo} alt="Bid up logo" className="logo"/>
+              <img src={bidLogo} alt="Bid up logo" className="logo" />
             </NavLink>
           </div>
           <div className="nav-bar">
-            {logged_in &&
-              <NavLink to= "/auction_new_route" className="nav-link">Create Auction</NavLink>
-            }
-            {logged_in &&
-              <NavLink to= "/my_auctions_route" className="nav-link">My Auctions</NavLink>
-            }
-            {logged_in &&
-              <NavLink to= "/my_bids_route" className="nav-link">My Bids</NavLink>
-            }
+            {logged_in && (
+              <NavLink to="/auction_new_route" className="nav-link">
+                Create Auction
+              </NavLink>
+            )}
+            {logged_in && (
+              <NavLink to="/my_auctions_route" className="nav-link">
+                My Auctions
+              </NavLink>
+            )}
+            {logged_in && (
+              <NavLink to="/my_bids_route" className="nav-link">
+                My Bids
+              </NavLink>
+            )}
           </div>
           <div className="nav-bar">
-              <Nav>
-                <NavItem>
-                  <NavLink to="/about" className="nav-link">About Us</NavLink>
-                </NavItem>
-              </Nav>
-              {!logged_in &&
-                <a href={new_user_route} className="nav-link">Sign Up</a>
-              }
-              {logged_in &&
-                <a href={sign_out_route} className="nav-link">Sign Out</a>
-              }
-              {!logged_in &&
-                <a href={sign_in_route} className="nav-link">Sign In</a>
-              }
-            </div>
+            <Nav>
+              <NavItem>
+                <NavLink to="/about" className="nav-link">
+                  About Us
+                </NavLink>
+              </NavItem>
+            </Nav>
+            {!logged_in && (
+              <a href={new_user_route} className="nav-link">
+                Sign Up
+              </a>
+            )}
+            {logged_in && (
+              <a href={sign_out_route} className="nav-link">
+                Sign Out
+              </a>
+            )}
+            {!logged_in && (
+              <a href={sign_in_route} className="nav-link">
+                Sign In
+              </a>
+            )}
+          </div>
         </header>
       </>
-    )
+    );
   }
 }
-export default Header
+export default Header;

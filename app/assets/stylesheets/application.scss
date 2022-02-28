@@ -14,14 +14,15 @@
  *= require_self
  */
 @import "bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Kanit:ital,wght@1,200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Kanit:ital,wght@1,200&family=Nunito+Sans:ital,wght@0,700;1,600&display=swap');
 /* ---HEADER--- */
 header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   text-align: center;
-  background-color: #9ee8f9;
+  background-color: #000000;
+  
 }
 .nav-bar {
   display: flex;
@@ -31,20 +32,37 @@ header {
   color: #000000;
   font-size: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Black Ops One", cursive;
-  font-family: "Kanit", sans-serif;
+  width: 173px;
+  height: 50px;
+  border: solid 1px rgb(83, 144, 218);
+  background-color: rgba(40, 151, 220, 0.988);
+  // box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  // -moz-box-shadow: 3px -3px 1px  rgba(0,0,0,0.6);
+  // -webkit-box-shadow: 3px -3px 1px  rgb(255, 255, 255);
+  // -o-box-shadow: 3px -3px 1px  rgba(0,0,0,0.6);
+  border-radius:25px;
+  font-family: 'Black Ops One', cursive;
+  font-family: 'Kanit', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   align-self: flex-end;
+  
 }
 .nav-link:hover {
-  color: yellow;
+  color: rgb(242, 180, 103);
   text-decoration: underline;
-  background-color: lightblue;
+  background-color: rgb(38, 57, 63);
+  opacity: 0.6;
 }
 .logo {
   height: 160px;
   cursor: pointer;
 }
-
+.body{
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5c02f4bbaf2096da211f2bc8/1608511684852-T2RD6MSWTDW7BGKB7YOI/Darkblue+-+Lightblue+Banner+2.png?format=2500w");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .flex-grid {
   display: flex;
   justify-content: space-around;
@@ -55,15 +73,76 @@ header {
 
 .card {
   margin: 1rem;
-  border: 5px blue solid;
+  border: 5px rgb(248, 248, 250) solid;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg")
 }
-
+/* ---AUCTION SHOW PAGE--- */
+.label {
+  color: black;
+  padding: 8px;
+  background-color: #e7e7e7;
+}
+.title{
+  font-family: "Copperplate";
+  font-size: 80px;
+}
+.subtitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Copperplate";
+  font-size: 25px;
+}
 /* ---SIGN UP PAGE--- */
 .form-element{
   margin: 10px;
   align-items: center;
+}
+
+.textfield{
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  display: block;
+  margin : 0 auto;
+  border: 4px solid rgb(252, 253, 255);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.placebid{
+  width: 1000px;
+}
+.images{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 50%;
+}
+.button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  width: 190px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  text-decoration: none;
 }

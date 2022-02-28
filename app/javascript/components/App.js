@@ -1,32 +1,32 @@
-import React, { Component } from "react"
-import Header from "./components/Header"
-import Home from "./pages/Home"
-import AboutUs from "./pages/AboutUs"
-import MyAuctions from "./pages/MyAuctions"
-import MyBids from "./pages/MyBids"
-import AuctionNew from "./pages/AuctionNew"
-import AuctionEdit from "./pages/AuctionEdit"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import AuctionShow from "./pages/AuctionShow"
+import React, { Component } from "react";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import MyAuctions from "./pages/MyAuctions";
+import MyBids from "./pages/MyBids";
+import AuctionNew from "./pages/AuctionNew";
+import AuctionEdit from "./pages/AuctionEdit";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AuctionShow from "./pages/AuctionShow";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       auctions: [],
-    }
+    };
   }
 
   componentDidMount() {
-    this.readAuction()
+    this.readAuction();
   }
 
   readAuction = () => {
     fetch("http://localhost:3000/auction_items")
       .then((response) => response.json())
       .then((auction_items) => this.setState({ auctions: auction_items }))
-      .catch((errors) => console.log("Auction read errors:", errors))
-  }
+      .catch((errors) => console.log("Auction read errors:", errors));
+  };
 
   createAuction = (auction) => {
     fetch("/auction_items", {
@@ -36,11 +36,14 @@ class App extends Component {
       },
       body: JSON.stringify({ auction_item: auction }),
     })
-  }
+    .then(response => response.json())
+    .then(payload => this.readAuction())
+    .catch(errors => console.log("create Auction errors:", errors))
+  };
 
   updateAuction = (updateAuction, id) => {
     fetch(`/auction_items/${id}`, {
-      method: 'PATCH',
+      method: "PATCH",
       body: JSON.stringify({ auction_item: updateAuction }),
       headers: {
         "Content-Type": "application/json",
@@ -50,8 +53,21 @@ class App extends Component {
         .json()
         .then((payload) => this.readAuction())
         .catch((errors) => console.log("Auction create errors:", errors))
-    )
-  }
+    );
+  };
+
+  createBid = (auction_item_id) => (bid) => {
+
+    fetch("/bids", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ bid: {...bid, auction_item_id:auction_item_id} }),
+    });
+  };
+  
+  
 
   render() {
     const {
@@ -64,30 +80,58 @@ class App extends Component {
       my_auctions_route,
       auction_show_route,
       my_bids_route,
-    } = this.props
+      bid_new_route,
+    } = this.props;
 
     return (
       <>
         <Router>
           <Header {...this.props} />
           <Switch className="nav-bar">
-            <Route exact path="/" render={(props) => <Home auctions={this.state.auctions} />} />
-            <Route path="/my_auctions_route" render={(props) => <MyAuctions auctions={this.state.auctions} />} />
+            <Route
+              exact
+              path="/"
+              render={(props) => <Home auctions={this.state.auctions} />}
+            />
+            <Route
+              path="/my_auctions_route"
+              render={(props) => <MyAuctions auctions={this.state.auctions} />}
+            />
             <Route
               path="/auction_show_route/:id"
               render={(props) => {
-                let paramId = +props.match.params.id
-                let auction = this.state.auctions.find((auction) => auction.id === paramId)
-                return <AuctionShow auction={auction} />
+                let id = props.match.params.id;
+                let auction = this.state.auctions.find(
+                  (auction) => auction.id == id
+                );
+                return <AuctionShow 
+                auction={auction}  
+                createBid={this.createBid(id)} 
+                readAuction={this.readAuction}
+                />;
               }}
             />
-            <Route path="/auction_new_route" render={(props) => <AuctionNew createAuction={this.createAuction} />} />
+            <Route
+              path="/auction_new_route"
+              render={(props) => (
+                <AuctionNew createAuction={this.createAuction} />
+              )}
+            />
+           
             <Route
               path="/auctionedit/:id"
               render={(props) => {
-                let id = +props.match.params.id
-                let auction = this.state.auctions.find((auction) => auction.id === id)
-                return <AuctionEdit auction={auction} updateAuction={this.updateAuction} id={id} />
+                let id = +props.match.params.id;
+                let auction = this.state.auctions.find(
+                  (auction) => auction.id === id
+                );
+                return (
+                  <AuctionEdit
+                    auction={auction}
+                    updateAuction={this.updateAuction}
+                    id={id}
+                  />
+                );
               }}
             />
             <Route path="/my_bids_route" component={MyBids} />
@@ -95,7 +139,7 @@ class App extends Component {
           </Switch>
         </Router>
       </>
-    )
+    );
   }
 }
-export default App
+export default App;
