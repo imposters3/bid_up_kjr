@@ -36,9 +36,9 @@ class App extends Component {
       },
       body: JSON.stringify({ auction_item: auction }),
     })
-    .then(response => response.json())
-    .then(payload => this.readAuction())
-    .catch(errors => console.log("create Auction errors:", errors))
+      .then((response) => response.json())
+      .then((payload) => this.readAuction())
+      .catch((errors) => console.log("create Auction errors:", errors));
   };
 
   updateAuction = (updateAuction, id) => {
@@ -57,18 +57,16 @@ class App extends Component {
   };
 
   createBid = (auction_item_id) => (price) => {
-
     fetch("/bids", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ bid: {price, auction_item_id:auction_item_id} }),
-    })
-    .then(() => this.readAuction());
+      body: JSON.stringify({
+        bid: { price, auction_item_id: auction_item_id },
+      }),
+    }).then(() => this.readAuction());
   };
-  
-  
 
   render() {
     const {
@@ -83,7 +81,6 @@ class App extends Component {
       my_bids_route,
       bid_new_route,
     } = this.props;
-
     return (
       <>
         <Router>
@@ -105,11 +102,14 @@ class App extends Component {
                 let auction = this.state.auctions.find(
                   (auction) => auction.id == id
                 );
-                return <AuctionShow 
-                auction={auction}  
-                createBid={this.createBid(id)} 
-                readAuction={this.readAuction}
-                />;
+                return (
+                  <AuctionShow
+                    auction={auction}
+                    current_user={current_user}
+                    createBid={this.createBid(id)}
+                    readAuction={this.readAuction}
+                  />
+                );
               }}
             />
             <Route
@@ -118,7 +118,7 @@ class App extends Component {
                 <AuctionNew createAuction={this.createAuction} />
               )}
             />
-           
+
             <Route
               path="/auctionedit/:id"
               render={(props) => {

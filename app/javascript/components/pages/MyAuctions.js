@@ -1,29 +1,35 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 class MyAuctions extends Component {
-
   render() {
-    return(
-        <>
-         <body className="body">
-          {this.props.auctions.map(auction =>{
+    return (
+      <>
+        <body className="body">
+          {this.props.auctions.map((auction) => {
             return (
-              <NavLink to={`/auction_show_route/${auction.id}`} key={auction.id}>
+              <NavLink
+                to={`/auction_show_route/${auction.id}`}
+                key={auction.id}
+              >
                 <div className="flex-grid">
                   <div className="col card">
-                    <img src={auction.celebrity_image_url} alt="celebrity image" width="200px" className="images"/>
+                    <img
+                      src={auction.celebrity_image_url}
+                      alt="celebrity image"
+                      width="200px"
+                      className="images"
+                    />
                     <p className="subtitle">{auction.title}</p>
                     <p className="subtitle">💲{auction.highest_bid_price}💲</p>
                   </div>
                 </div>
               </NavLink>
-            )
+            );
           })}
-         </body>
-       </>
-    )
+        </body>
+      </>
+    );
   }
 }
-export default MyAuctions
+export default MyAuctions;
