@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   readAuction = () => {
-    fetch("http://localhost:3000/auction_items")
+    fetch("/auction_items")
       .then((response) => response.json())
       .then((auction_items) => this.setState({ auctions: auction_items }))
       .catch((errors) => console.log("Auction read errors:", errors));
