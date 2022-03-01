@@ -6,7 +6,7 @@ import moment from "moment"
 class AuctionEdit extends Component {
   constructor(props) {
     super(props)
-    const { user_id, ...auction } = props.auction
+    const {user_id, ...auction} = props.auction
     this.state = {
       updateAuction: {
         title: "",

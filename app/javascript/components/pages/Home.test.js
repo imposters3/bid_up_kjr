@@ -11,9 +11,9 @@ describe("when the Home loads...", () => {
     //Arrange
     const renderedPostImg = shallow(<Home/>)
     //variable that class on shallow which is passed an arguemnt
-    const imgWrapper = renderedPostImg.find("img")
+    const imgWrapper = renderedPostImg.find("body")
     //Assert
-    expect(imgWrapper.length).toEqual(1)
+    expect(imgWrapper.length).toEqual(2)
 
   })
   
