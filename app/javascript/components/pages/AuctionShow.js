@@ -43,7 +43,7 @@ class AuctionShow extends Component {
     return (
       <>
        
-          <Form className="col card">
+          <Form className="card">
             <p className="title">{auction.title}</p>
             <img
               src={auction.celebrity_image_url}
@@ -99,14 +99,19 @@ class AuctionShow extends Component {
             </FormGroup>
             <div>
               {moment() > moment(auction.end_date_time) && (
-                <h1>{auction.highest_bid_username} has won the auction</h1>
+                <h1>{auction.highest_bid_username} has won the auction 🎉 </h1>
+              )}
+            </div>
+            <div>
+              {moment() > moment(auction.end_date_time) && (
+                <h1> Please contact {auction.highest_bid_username} </h1>
               )}
             </div>
             {loggedIn && moment() < moment(auction.end_date_time) && (
               <BidNew createBid={this.props.createBid} className="placebid" />
             )}
             <br />
-            <div className="container">
+            <div className="card">
               {loggedIn && currentUser.id === auction.user_id && moment() < moment(auction.start_date_time) && (
                 <NavLink to={`/auctionedit/${auction.id}`}>
                   <Button className="buttons">Edit Auction</Button>

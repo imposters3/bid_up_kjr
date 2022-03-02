@@ -12,9 +12,9 @@ class AboutUs extends Component {
             <div className="row">
               <div className="body1">
                 <div className="card1">
-                  <div className="container">
+                  <div className="container1">
                     <h2>Kevin Smith</h2>
-                    <p className="container">Product && Project Manager </p>
+                    <p className="container1">Product && Project Manager </p>
                     <p>Bio</p>
                     <br/>
                     <a
@@ -28,9 +28,9 @@ class AboutUs extends Component {
               </div>
               <div className="body1">
                 <div className="card1">
-                  <div className="container">
+                  <div className="container1">
                     <h2>Raul Marquez</h2>
-                    <p className="container">Design Lead</p>
+                    <p className="container1">Design Lead</p>
                     <p>Bio</p>
                     <br/>
                     <a
