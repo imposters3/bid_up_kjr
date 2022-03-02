@@ -36,10 +36,6 @@ header {
   height: 50px;
   border: solid 1px rgb(83, 144, 218);
   background-color: rgba(40, 151, 220, 0.988);
-  // box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
-  // -moz-box-shadow: 3px -3px 1px  rgba(0,0,0,0.6);
-  // -webkit-box-shadow: 3px -3px 1px  rgb(255, 255, 255);
-  // -o-box-shadow: 3px -3px 1px  rgba(0,0,0,0.6);
   border-radius:25px;
   font-family: 'Black Ops One', cursive;
   font-family: 'Kanit', sans-serif;
@@ -65,11 +61,12 @@ header {
 }
 .flex-grid {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.col {
-  flex: 1;
-}
+// .col {
+//   flex: 1;
+// }
 
 .card {
   margin: 1rem;
@@ -78,7 +75,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg")
+  background-color: rgba(40, 151, 220, 0.988);
 }
 /* ---AUCTION SHOW PAGE--- */
 .label {
@@ -145,4 +142,17 @@ header {
   margin-left: auto;
   margin-right: auto; 
   text-decoration: none;
+}
+
+.body1{
+  background-color: black;
+}
+.card1 {
+  margin: 1rem;
+  border: 5px rgb(248, 248, 250) solid;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(174, 29, 29);
 }

@@ -105,7 +105,9 @@ class App extends Component {
                 return (
                   <AuctionShow
                     auction={auction}
-                    current_user={current_user}
+                    currentUser={current_user}
+                    loggedIn={logged_in}
+                    currentUser={current_user}
                     createBid={this.createBid(id)}
                     readAuction={this.readAuction}
                   />

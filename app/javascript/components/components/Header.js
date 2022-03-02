@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import bidLogo from "images/bid-up-moon.png";
+import BidLogo from "images/bid-up-moon.png";
 import AboutUs from "../pages/AboutUs";
 import AuctionNew from "../pages/AuctionNew";
 import MyAuctions from "../pages/MyAuctions";
@@ -25,7 +25,7 @@ class Header extends Component {
         <header>
           <div className="nav-bar">
             <NavLink to="/">
-              <img src={bidLogo} alt="Bid up logo" className="logo" />
+              <img src={BidLogo} alt="Bid up logo" className="logo" />
             </NavLink>
           </div>
           <div className="nav-bar">
@@ -34,16 +34,7 @@ class Header extends Component {
                 Create Auction
               </NavLink>
             )}
-            {logged_in && (
-              <NavLink to="/my_auctions_route" className="nav-link">
-                My Auctions
-              </NavLink>
-            )}
-            {logged_in && (
-              <NavLink to="/my_bids_route" className="nav-link">
-                My Bids
-              </NavLink>
-            )}
+            
           </div>
           <div className="nav-bar">
             <Nav>
