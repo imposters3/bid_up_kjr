@@ -97,18 +97,23 @@ class AuctionShow extends Component {
               </Label>
               <p className="textfield">{auction.charity_url}</p>
             </FormGroup>
+            <div>
+              {moment() > moment(auction.end_date_time) && (
+                <h1>{auction.highest_bid_username} has won the auction</h1>
+              )}
+            </div>
             {loggedIn && moment() < moment(auction.end_date_time) && (
               <BidNew createBid={this.props.createBid} className="placebid" />
             )}
             <br />
             <div className="container">
-              {loggedIn && currentUser.id === auction.user_id && (
+              {loggedIn && currentUser.id === auction.user_id && moment() < moment(auction.start_date_time) && (
                 <NavLink to={`/auctionedit/${auction.id}`}>
                   <Button className="buttons">Edit Auction</Button>
                 </NavLink>
               )}
               <br />
-              {loggedIn && currentUser.id === auction.user_id && (
+              {loggedIn && currentUser.id === auction.user_id && moment() > moment(auction.end_date_time) && (
                 <Button
                   onClick={() => this.deleteAuction(auction.id)}
                   name="submit"
