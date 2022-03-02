@@ -17,8 +17,8 @@ auction_items = [
     description: 'On his superyacht',
     highest_bid_price: 1000,
     highest_bid_user_id: 1,
-    start_date_time: "2022-02-23 19:00:00",
-    end_date_time: "2022-02-28 19:00:00",
+    start_date_time: "2022-03-23 19:00:00",
+    end_date_time: "2022-03-28 19:00:00",
     charity_name: 'Donate.org',
     charity_url: 'https://www.linkedin.com/in/charity-johnson-9555929',
     has_a_winner: false,
@@ -30,13 +30,14 @@ auction_items = [
     description: 'In Gym',
     highest_bid_price: 2000,
     highest_bid_user_id: 1,
-    start_date_time: "2022-02-23 19:00:00",
-    end_date_time: "2022-02-28 19:00:00",
+    start_date_time: "2022-03-23 19:00:00",
+    end_date_time: "2022-03-28 19:00:00",
     charity_name: 'Donate.org',
     charity_url: 'https://www.linkedin.com/in/charity-johnson-9555929',
     has_a_winner: false,
     user_id: 2
   }
+
 ]
 
 auction_items.each do |attribute|

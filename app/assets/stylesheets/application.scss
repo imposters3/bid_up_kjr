@@ -14,7 +14,7 @@
  *= require_self
  */
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Kanit:ital,wght@1,200&family=Nunito+Sans:ital,wght@0,700;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Kanit:ital,wght@1,200&family=Nunito+Sans:ital,wght@0,700;1,600&display=swap");
 /* ---HEADER--- */
 header {
   display: flex;
@@ -22,7 +22,6 @@ header {
   align-items: baseline;
   text-align: center;
   background-color: #000000;
-  
 }
 .nav-bar {
   display: flex;
@@ -36,12 +35,11 @@ header {
   height: 50px;
   border: solid 1px rgb(83, 144, 218);
   background-color: rgba(40, 151, 220, 0.988);
-  border-radius:25px;
-  font-family: 'Black Ops One', cursive;
-  font-family: 'Kanit', sans-serif;
-  font-family: 'Nunito Sans', sans-serif;
+  border-radius: 25px;
+  font-family: "Black Ops One", cursive;
+  font-family: "Kanit", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   align-self: flex-end;
-  
 }
 .nav-link:hover {
   color: rgb(242, 180, 103);
@@ -53,7 +51,7 @@ header {
   height: 160px;
   cursor: pointer;
 }
-.body{
+.body {
   background-image: url("https://images.squarespace-cdn.com/content/v1/5c02f4bbaf2096da211f2bc8/1608511684852-T2RD6MSWTDW7BGKB7YOI/Darkblue+-+Lightblue+Banner+2.png?format=2500w");
   background-position: center;
   background-size: cover;
@@ -62,20 +60,29 @@ header {
 .flex-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
 }
-// .col {
-//   flex: 1;
-// }
+
+.squares {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .card {
+  width: 12.5rem;
+  flex: 1 1 200px;
+}
+
+.col {
+  // flex: 1;
   margin: 1rem;
-  border: 5px rgb(248, 248, 250) solid;
+  border: 5px #000000 solid;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(40, 151, 220, 0.988);
+  background-color: white;
 }
 /* ---AUCTION SHOW PAGE--- */
 .label {
@@ -83,11 +90,11 @@ header {
   padding: 8px;
   background-color: #e7e7e7;
 }
-.title{
+.title {
   font-family: "Copperplate";
   font-size: 80px;
 }
-.subtitle{
+.subtitle {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,36 +102,36 @@ header {
   font-size: 25px;
 }
 /* ---SIGN UP PAGE--- */
-.form-element{
+.form-element {
   margin: 10px;
   align-items: center;
 }
 
-.textfield{
+.textfield {
   width: 800px;
   display: flex;
   flex-direction: column;
   position: relative;
   display: block;
-  margin : 0 auto;
+  margin: 0 auto;
   border: 4px solid rgb(252, 253, 255);
   border-radius: 4px;
   box-sizing: border-box;
 }
-.placebid{
+.placebid {
   width: 1000px;
 }
-.images{
+.images {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   border-radius: 50%;
 }
-.button{
+.button {
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 
 .container {
@@ -140,18 +147,18 @@ header {
   width: 190px;
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
   text-decoration: none;
 }
 
-.body1{
+.body1 {
   background-color: black;
 }
 .card1 {
   margin: 1rem;
   border: 5px rgb(248, 248, 250) solid;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: rgb(174, 29, 29);
