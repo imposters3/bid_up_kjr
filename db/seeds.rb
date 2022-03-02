@@ -25,7 +25,7 @@ auction_items = [
     user_id: 1
   },
   {
-    title: 'work out with Stone',
+    title: 'Work out with the Rock',
     celebrity_image_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/therock-253954517-279993034023432-628278073878740852-n-1636731864.jpg?resize=640:*',
     description: 'In Gym',
     highest_bid_price: 2000,
