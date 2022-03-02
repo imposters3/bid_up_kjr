@@ -38,95 +38,114 @@ class AuctionNew extends Component {
   render() {
     return (
       <>
-      <body className="body">
-        <h2 className="title"> Create Auction Here </h2>
-        <Form>
-          <FormGroup>
-            <Label for="title" className="subtitle">Title</Label>
-            <Input
-              name="title"
-              type="text"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.title}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="celebrity_image_url" className="subtitle">Celebrity Image URL</Label>
-            <Input
-              name="celebrity_image_url"
-              type="text"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.celebrity_image_url}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="description" className="subtitle">Description</Label>
-            <Input
-              name="description"
-              type="text"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.description}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="highest_bid_price" className="subtitle">Base Bid Price</Label>
-            <Input
-              name="highest_bid_price"
-              type="text"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.highest_bid_price}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="start_date_time" className="subtitle">Start Date & Time</Label>
-            <Input
-              name="start_date_time"
-              type="datetime-local"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.start_date_time}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="end_date_time" className="subtitle">End Date & Time</Label>
-            <Input
-              name="end_date_time"
-              type="datetime-local"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.end_date_time}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="charity_name" className="subtitle">Charity Organization Name</Label>
-            <Input
-              name="charity_name"
-              type="text"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.charity_name}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="charity_url" className="subtitle">Charity Organization Website</Label>
-            <Input
-              name="charity_url"
-              type="text"
-              onChange={this.handleChange}
-              className= "textfield"
-              value={this.state.newAuction.charity_url}
-            />
-          </FormGroup>
-          <Button onClick={this.handleSubmit.bind(this)} name="submit" className="buttons">
-          Create a New Auction
-        </Button>
-        </Form>
-        
-        {this.state.submitted && <Redirect to="/my_auctions_route" />}
+        <body className="body">
+          <h2 className="title"> Create Auction Here </h2>
+          <Form>
+            <FormGroup>
+              <Label for="title" className="subtitle">
+                Title
+              </Label>
+              <Input
+                name="title"
+                type="text"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.title}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="celebrity_image_url" className="subtitle">
+                Celebrity Image URL
+              </Label>
+              <Input
+                name="celebrity_image_url"
+                type="text"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.celebrity_image_url}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="description" className="subtitle">
+                Description
+              </Label>
+              <Input
+                name="description"
+                type="text"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.description}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="highest_bid_price" className="subtitle">
+                Base Bid Price
+              </Label>
+              <Input
+                name="highest_bid_price"
+                type="text"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.highest_bid_price}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="start_date_time" className="subtitle">
+                Start Date & Time
+              </Label>
+              <Input
+                name="start_date_time"
+                type="datetime-local"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.start_date_time}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="end_date_time" className="subtitle">
+                End Date & Time
+              </Label>
+              <Input
+                name="end_date_time"
+                type="datetime-local"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.end_date_time}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="charity_name" className="subtitle">
+                Charity Organization Name
+              </Label>
+              <Input
+                name="charity_name"
+                type="text"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.charity_name}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="charity_url" className="subtitle">
+                Charity Organization Website
+              </Label>
+              <Input
+                name="charity_url"
+                type="text"
+                onChange={this.handleChange}
+                className="textfield"
+                value={this.state.newAuction.charity_url}
+              />
+            </FormGroup>
+            <Button
+              onClick={this.handleSubmit.bind(this)}
+              name="submit"
+              className="buttons"
+            >
+              Create a New Auction
+            </Button>
+          </Form>
+          {this.state.submitted && <Redirect to="/" />}
         </body>
       </>
     );
