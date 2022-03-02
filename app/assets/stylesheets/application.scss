@@ -61,11 +61,12 @@ header {
 }
 .flex-grid {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.col {
-  flex: 1;
-}
+// .col {
+//   flex: 1;
+// }
 
 .card {
   margin: 1rem;
@@ -74,7 +75,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg")
+  background-color: rgba(40, 151, 220, 0.988);
 }
 /* ---AUCTION SHOW PAGE--- */
 .label {

@@ -34,16 +34,7 @@ class Header extends Component {
                 Create Auction
               </NavLink>
             )}
-            {logged_in && (
-              <NavLink to="/my_auctions_route" className="nav-link">
-                My Auctions
-              </NavLink>
-            )}
-            {logged_in && (
-              <NavLink to="/my_bids_route" className="nav-link">
-                My Bids
-              </NavLink>
-            )}
+            
           </div>
           <div className="nav-bar">
             <Nav>

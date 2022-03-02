@@ -36,7 +36,7 @@ class AuctionShow extends Component {
   };
 
   render() {
-    const { auction, logged_in, current_user, auction_item_id } = this.props;
+    const { auction, loggedIn, currentUser } = this.props;
     if (!auction){
       return null
     }
@@ -97,18 +97,18 @@ class AuctionShow extends Component {
               </Label>
               <p className="textfield">{auction.charity_url}</p>
             </FormGroup>
-            {moment() < moment(auction.end_date_time) && (
+            {loggedIn && moment() < moment(auction.end_date_time) && (
               <BidNew createBid={this.props.createBid} className="placebid" />
             )}
             <br />
             <div className="container">
-              {logged_in && current_user.id === auction.user_id && (
+              {loggedIn && currentUser.id === auction.user_id && (
                 <NavLink to={`/auctionedit/${auction.id}`}>
                   <Button className="buttons">Edit Auction</Button>
                 </NavLink>
               )}
               <br />
-              {logged_in && current_user.id === auction.user_id && (
+              {loggedIn && currentUser.id === auction.user_id && (
                 <Button
                   onClick={() => this.deleteAuction(auction.id)}
                   name="submit"
@@ -117,7 +117,7 @@ class AuctionShow extends Component {
                   Delete Auction
                 </Button>
               )}
-              {this.state.submitted && <Redirect to="/my_auctions_route" />}
+              {this.state.submitted && <Redirect to="/" />}
             </div>
           </Form>
 

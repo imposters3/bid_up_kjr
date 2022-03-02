@@ -6,11 +6,12 @@ Enzyme.configure({adapter: new Adapter()})
 
 describe("when the AuctionShow loads...", () => {
 
-  it("display a body ", () => {
+  it("display a Form ", () => {
     const readAuction = jest.fn()
-    const renderedBody = shallow(<AuctionShow readAuction={readAuction}/>)
-    const bodyWrapper = renderedBody.find("body")
-    expect(bodyWrapper.length).toEqual(1)
+    const renderedForm = shallow(<AuctionShow readAuction={readAuction}/>)
+    const formWrapper = renderedForm.find("Form")
+    expect(formWrapper.length).toEqual(1)
   })
+  
   
 })

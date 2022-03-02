@@ -7,9 +7,9 @@ Enzyme.configure({adapter: new Adapter()})
 
 describe("when the MyAuctions renders,", () => {
 
-  it("display a body ", () => {
+  it("display a div ", () => {
     const renderedBody = shallow(<MyAuctions/>)
-    const bodyWrapper = renderedBody.find("body")
+    const bodyWrapper = renderedBody.find("div")
     expect(bodyWrapper.length).toEqual(1)
   })
 })
