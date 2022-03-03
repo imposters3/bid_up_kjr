@@ -28,8 +28,6 @@ https://radiant-island-32845.herokuapp.com/
     <td align="center"><a href="https://www.linkedin.com/in/jason-wang-b207a862/" target="_blank"><img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png" width="100px;" alt="Kirk Wang" style="border: solid white 4px"/><br /><b><sub>Jason Wang</sub></b></a><br /><sub>Tech Lead</sub>
 </table>
 
-Imposters Dev Team: rubyonramen@gmail.com
-
 Project Link: https://github.com/imposters3
 
 ### Acknowledgements

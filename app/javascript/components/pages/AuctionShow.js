@@ -106,29 +106,18 @@ class AuctionShow extends Component {
               currentUser.id === auction.user_id &&
               moment() < moment(auction.start_date_time) && (
                 <NavLink to={`/auctionedit/${auction.id}`}>
-                  <Button className="buttons">Edit Auction</Button>
+                  <Button className="buttons">
+                    Edit Auction
+                    </Button>
                 </NavLink>
               )}
             <br />
             {loggedIn &&
-              currentUser.id === auction.user_id &&
-              moment() > moment(auction.end_date_time) && (
+              currentUser.id === auction.user_id && (
                 <Button
                   onClick={() => this.deleteAuction(auction.id)}
                   name="submit"
-                  className="buttons"
-                >
-                  Delete Auction
-                </Button>
-              )}
-            {loggedIn &&
-              currentUser.id === auction.user_id &&
-              moment() < moment(auction.end_date_time) && (
-                <Button
-                  onClick={() => this.deleteAuction(auction.id)}
-                  name="submit"
-                  className="buttons"
-                >
+                  className="buttons">
                   Delete Auction
                 </Button>
               )}
