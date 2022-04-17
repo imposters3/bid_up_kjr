@@ -23,9 +23,9 @@ https://radiant-island-32845.herokuapp.com/
 
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/kevin-michael-smith-83157b182/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C5603AQFD2nres-HJSg/profile-displayphoto-shrink_800_800/0/1552492190046?e=1651708800&v=beta&t=MTU0oyUAQU9UEunqHm7j2oBF3Gzx8ttiOEA5eZ1ITnk" width="100px;" alt="Chris Hickey" style="border: solid white 4px" /><br /><b><sub>Kevin Smith</sub></b></a><br /><sub>Project & Product Manager</sub>
-    <td align="center"><a href="https://www.linkedin.com/in/raul-marquez-veteran/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEu1fxtB_unbQ/profile-framedphoto-shrink_800_800/0/1645638244015?e=1646272800&v=beta&t=eFreDJkKXUrr0AiRqlMMX0X2RjcbS88Zl1cFDJxZXOo" width="100px;" alt="Samantha Perez" style="border: solid white 4px"/><br /><b><sub>Raul Marquez</sub></b></a><br /><sub>Design Lead</sub>
-    <td align="center"><a href="https://www.linkedin.com/in/jason-wang-b207a862/" target="_blank"><img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png" width="100px;" alt="Kirk Wang" style="border: solid white 4px"/><br /><b><sub>Jason Wang</sub></b></a><br /><sub>Tech Lead</sub>
+    <td align="center"><a href="https://www.linkedin.com/in/kevin-michael-smith-83157b182/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C5603AQFD2nres-HJSg/profile-displayphoto-shrink_800_800/0/1552492190046?e=1651708800&v=beta&t=MTU0oyUAQU9UEunqHm7j2oBF3Gzx8ttiOEA5eZ1ITnk" width="100px;" alt="Kevin Smith" style="border: solid white 4px" /><br /><b><sub>Kevin Smith</sub></b></a><br /><sub>Project & Product Manager</sub>
+    <td align="center"><a href="https://www.linkedin.com/in/raul-marquez-veteran/" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEu1fxtB_unbQ/profile-framedphoto-shrink_800_800/0/1645638244015?e=1650322800&v=beta&t=kCxGohDhdTA9dqTDWUBIRv8ElSjLZs-gyMzFWMCCw6w" width="100px;" alt="Raul Marquez" style="border: solid white 4px"/><br /><b><sub>Raul Marquez</sub></b></a><br /><sub>Design Lead</sub>
+    <td align="center"><a href="https://www.linkedin.com/in/jason-wang-b207a862/" target="_blank"><img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png" width="100px;" alt="Jason Wang" style="border: solid white 4px"/><br /><b><sub>Jason Wang</sub></b></a><br /><sub>Tech Lead</sub>
 </table>
 
 Project Link: https://github.com/imposters3
